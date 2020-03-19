@@ -10,6 +10,7 @@ Encargado_Carrera varchar(50) not null,
 Estado_Carrera varchar(1) not null
 
 )Engine =InnoDB, default char set=latin1;
+
 create table Cursos(
 
 	ID_Curso int primary key,
@@ -20,3 +21,14 @@ create table Cursos(
     Estado_Curso char(1)
 )Engine= InnoDB, default char set= latin1;
 
+create table Sede(
+	ID_Sede int primary key,
+    Nombre_Sede varchar(50) not null,
+    Direccion_Sede varchar(100) not null,
+    Numero_Clases int,
+	Numero_Alumnos int,
+    Numero_Maestros int,
+    Numero_Carreras int,
+    Comentario varchar(100),
+    Estado_Sede char(1)
+)Engine= InnoDB, default char set= latin1;
