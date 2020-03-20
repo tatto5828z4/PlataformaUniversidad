@@ -96,3 +96,40 @@ create table Alumno(
     foreign key (ID_Sede) references Sede(ID_Sede)
     
 )Engine= InnoDB, default char set= latin1;
+
+create table Notas(
+ID_Alumno int not null,
+ID_Curso int not null,
+foreign key(ID_Alumno) references Alumno(ID_Alumno),
+foreign key(ID_Curso) references Cursos(ID_Curso),
+
+Primer_Parcial int,
+Segundo_Parcial int,
+Final int,
+Actividades int,
+Alumno_Aprobo char(1)
+
+)Engine =InnoDB, default char set = latin1;
+
+create table cronograma(
+	ID_Cronograma int primary key,
+    Nombre_Actividad varchar(80) not null,
+    Encargado_Actividad varchar(50) not null,
+    Horario_Actividad datetime not null,
+    Ubicacion_Actividad varchar(80) not null,
+    Estado_Cronograma char(1)
+)Engine= InnoDB, default char set= latin1;
+
+create table Pagos(
+	ID_Pago int primary key,
+    Nobre_Pago varchar(50),
+    ID_alumno int not null,
+    Mensualidad int not null,
+    Estado_Pago char(1)
+)Engine= InnoDB, default char set= latin1;
+
+create table Usuarios(
+	Username varchar(50) primary key,
+    Password_Usuario varchar(50) not null,
+    Tipo_Usuario varchar(15) not null
+)Engine= InnoDB, default char set= latin1;
