@@ -53,6 +53,7 @@ create table Maestro(
     
     ID_Curso int not null,
     foreign key (ID_Curso) references Cursos(ID_Curso)
+
 )Engine= InnoDB, default char set= latin1;
 create table Horario(
 	ID_Horario int primary key,
